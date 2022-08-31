@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./LoginForm.css"
 
 export default class SignUpForm extends Component {
   state = {
@@ -17,7 +18,7 @@ export default class SignUpForm extends Component {
   handleSubmit = async (evt) => {
     evt.preventDefault();
     try {
-      const fetchResponse = await fetch('/api/users/login', {
+      const fetchResponse = await fetch("/api/users/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -44,23 +45,53 @@ export default class SignUpForm extends Component {
       <div>
         <div className="form-container" onSubmit={this.handleSubmit}>
           <form autoComplete="off">
-            <label>Email</label>
-            <input
-              type="text"
-              name="email"
-              value={this.state.email}
-              onChange={this.handleChange}
-              required
-            />
-            <label>Password</label>
-            <input
-              type="password"
-              name="password"
-              value={this.state.password}
-              onChange={this.handleChange}
-              required
-            />
-            <button type="submit">LOG IN</button>
+            <div className="mb-3">
+              <label>Email</label>
+              <input
+                type="email"
+                name="email"
+                className="form-control"
+                placeholder="Enter email"
+                value={this.state.email}
+                onChange={this.handleChange}
+                required
+              />
+            </div>
+
+            <div className="mb-3">
+              <label>Password</label>
+              <input
+                type="password"
+                name="password"
+                className="form-control"
+                placeholder="Enter password"
+                value={this.state.password}
+                onChange={this.handleChange}
+                required
+              />
+            </div>
+
+            <div className="mb-3">
+              <div className="custom-control custom-checkbox">
+                <input
+                  type="checkbox"
+                  className="custom-control-input"
+                  id="customCheck1"
+                />
+                <label className="custom-control-label" htmlFor="customCheck1">
+                  Remember me
+                </label>
+              </div>
+            </div>
+            <div className="d-grid">
+              <button type="submit" class="btn btn-primary form-control">
+                SUBMIT
+              </button>
+            </div>
+
+            <p className="forgot-password text-right">
+              Forgot <a href="#">password?</a>
+            </p>
           </form>
         </div>
         <p className="error-message">&nbsp;{this.state.error}</p>

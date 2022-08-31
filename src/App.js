@@ -1,6 +1,6 @@
 import "./App.css";
 import React, { Component } from "react";
-// import AuthPage from "./pages/AuthPage/AuthPage";
+import AuthPage from "./pages/AuthPage/AuthPage";
 import MainPage from "./components/MainPage/MainPage";
 
 export default class App extends Component {
@@ -29,12 +29,12 @@ export default class App extends Component {
   render() {
     return (
       <main className="App">
-        {/* {this.state.user ? (
+        {this.state.user ? (
           <MainPage setUserInState={this.setUserInState} />
         ) : (
           <AuthPage setUserInState={this.setUserInState} />
-        )} */}
-        <MainPage setUserInState={this.setUserInState} />
+        )}
+        {/* <MainPage setUserInState={this.setUserInState} /> */}
       </main>
     );
   }

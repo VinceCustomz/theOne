@@ -10,7 +10,8 @@ export default class AuthPage extends React.Component {
   
     render() {
       return (
-        <main className="AuthPage">
+        <main className="AuthPage auth-wrapper">
+          <div className="auth-inner">
           <div>
             <h3
               onClick={() => this.setState({ showLogin: !this.state.showLogin })}>
@@ -22,6 +23,7 @@ export default class AuthPage extends React.Component {
           ) : (
             <SignUpForm setUserInState={this.props.setUserInState} />
           )}
+          </div>
         </main>
       );
     }
