@@ -84,7 +84,7 @@ export default class SignUpForm extends Component {
               </div>
             </div>
             <div className="d-grid">
-              <button type="submit" class="btn btn-primary form-control">
+              <button type="submit" className="btn btn-primary form-control">
                 SUBMIT
               </button>
             </div>
@@ -92,6 +92,7 @@ export default class SignUpForm extends Component {
             <p className="forgot-password text-right">
               Forgot <a href="#">password?</a>
             </p>
+ 
           </form>
         </div>
         <p className="error-message">&nbsp;{this.state.error}</p>
