@@ -1,18 +1,18 @@
 import React, { Component } from "react";
 import UserLogOut from "../UserLogOut/UserLogOut";
 import NavBar from "../NavBar/NavBar";
-
-import { Main } from "./MainPageElements";
+import './MainPage.css'
 
 export default class MainPage extends Component {
   render() {
     return (
       <>
         <NavBar />
-        <Main>
+        <div>
           MainPage
           <UserLogOut setUserInState={this.props.setUserInState} />
-        </Main>
+
+        </div>
       </>
     );
   }

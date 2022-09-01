@@ -1,10 +1,17 @@
 import React, { Component } from 'react'
-import { Nav } from './NavBarElements'
+import './NavBar.css'
 
 export default class NavBar extends Component {
   render() {
     return (
-      <Nav>NavBar</Nav>
+      <div className='NavBar'>
+        NavBar
+        <div className='InnerNav'>
+          inner
+          <div> MORE</div> 
+        </div> 
+
+      </div>
     )
   }
 }
